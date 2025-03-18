@@ -1,0 +1,34 @@
+{
+  "name": "mcp-antd-components",
+  "version": "0.0.1",
+  "type": "module",
+  "sideEffects": false,
+  "main": "index.mjs",
+  "description": "Model Context Protocol server for Ant Design components",
+  "bin": {
+    "mcp-antd-components": "index.mjs"
+  },
+  "scripts": {
+    "start": "node index.mjs",
+    "help": "node index.mjs --help",
+    "typecheck": "true",
+    "test": "node scripts/test-server.mjs",
+    "extract": "node scripts/extract-docs.mjs ./ant-design"
+  },
+  "keywords": [
+    "mcp",
+    "antd",
+    "ant design",
+    "model context protocol",
+    "ui components"
+  ],
+  "author": "Hannes Junnila",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.7.0",
+    "zod": "^3.24.2"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
