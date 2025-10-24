@@ -31,11 +31,16 @@ cd mcp-antd
 npm install
 ```
 
-### Step 3: Extract Documentation
+### Step 3: Extract Documentation (Skip if data already exists)
 
-Before using the server, you need to extract component documentation from the official Ant Design repository:
+**If the `data/` directory already exists** (with `components-index.json`, `metadata.json`, and `components/` folder), you can skip this step and go directly to Step 4.
+
+**If you need to extract documentation** (for new installations or updates):
 
 ```bash
+# Remove existing data directory if it exists (to ensure clean extraction)
+rm -rf data
+
 # Clone the official Ant Design repository (temporary)
 git clone https://github.com/ant-design/ant-design.git
 
