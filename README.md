@@ -12,36 +12,66 @@ A Model Context Protocol (MCP) server that exposes Ant Design component document
 - Browse code examples for specific components
 - Search for components by name or functionality
 
-## Initial Setup
+## Installation Instructions
 
-Before using the MCP server for the first time, you need to extract the documentation from the Ant Design repository:
+Follow these steps to set up the MCP server from scratch:
+
+### Step 1: Clone the Repository
 
 ```bash
-# First, clone the Ant Design repository (can be temporary)
+# Clone the MCP Ant Design Components repository
+git clone https://github.com/hannesj/mcp-antd-components.git mcp-antd
+cd mcp-antd
+```
+
+### Step 2: Install Dependencies
+
+```bash
+# Install Node.js dependencies
+npm install
+```
+
+### Step 3: Extract Documentation
+
+Before using the server, you need to extract component documentation from the official Ant Design repository:
+
+```bash
+# Clone the official Ant Design repository (temporary)
 git clone https://github.com/ant-design/ant-design.git
 
-# Extract documentation
-cd mcp-antd-components
-npm run extract   # Uses the default ./ant-design path
-# OR
-node scripts/extract-docs.mjs /path/to/ant-design  # For a custom path
+# Extract all component documentation and examples
+npm run extract
 
-# After extraction is complete, the Ant Design repo can be deleted if desired
+# Clean up - remove the Ant Design repo (no longer needed)
+rm -rf ant-design
 ```
 
-This will create a `data` directory with all the extracted component documentation, which the MCP server will use.
+**What this does:**
 
-### Testing the Server
+- Downloads the latest Ant Design source code
+- Extracts component documentation, API definitions, and examples
+- Creates a `data/` directory with pre-processed documentation
+- Allows the MCP server to work without the full Ant Design repository
 
-To verify that everything is working correctly, you can run the test script:
+### Step 4: Test the Installation
+
+Verify everything is working correctly:
 
 ```bash
+# Run the test suite to verify all tools work
 npm test
-# OR
-node scripts/test-server.mjs
 ```
 
-This will run the MCP server and test all available tools with sample queries.
+This will test all available MCP tools and show sample outputs.
+
+### Step 5: Start the Server
+
+```bash
+# Start the MCP server
+npm start
+```
+
+The server is now ready to be used with Claude Desktop or Claude Code!
 
 ## Usage
 
@@ -111,6 +141,99 @@ To use this MCP server with Claude Code CLI, follow these steps:
 
 - Use the `-s` or `--scope` flag with `project` (default) or `global` to specify where the configuration is stored
 
+### VS Code Integration
+
+You can also use this MCP server directly in VS Code projects by setting up a local MCP configuration. This is useful when you want to access Ant Design documentation within a specific project.
+
+#### Prerequisites
+
+Make sure you have completed the [Installation Instructions](#installation-instructions) and the MCP server is working properly.
+
+#### Setup Steps
+
+1. **Start the MCP server** (keep it running in a terminal):
+
+   ```bash
+   # Navigate to your mcp-antd directory
+   cd /path/to/mcp-antd
+
+   # Start the server
+   npm start
+   ```
+
+2. **Create MCP configuration in your project**:
+
+   In your VS Code project, create a `.vscode` folder (if it doesn't exist) and add an `mcp.json` file:
+
+   ```json
+   {
+     "servers": {
+       "AntD": {
+         "command": "node",
+         "args": ["../mcp-antd/index.mjs"]
+       }
+     },
+     "inputs": []
+   }
+   ```
+
+3. **Adjust the file path**:
+
+   The `"args": ["../mcp-antd/index.mjs"]` path needs to point to your MCP server installation. Here are some examples:
+
+   **Example 1**: If your project structure looks like this:
+
+   ```
+   /Users/yourname/
+   ├── mcp-antd/           (MCP server here)
+   └── my-project/         (Your VS Code project here)
+       └── .vscode/
+           └── mcp.json
+   ```
+
+   Use: `"args": ["../mcp-antd/index.mjs"]`
+
+   **Example 2**: If your MCP server is in a different location:
+
+   ```
+   /Users/yourname/
+   ├── tools/
+   │   └── mcp-antd/       (MCP server here)
+   └── projects/
+       └── my-project/     (Your VS Code project here)
+           └── .vscode/
+               └── mcp.json
+   ```
+
+   Use: `"args": ["../../tools/mcp-antd/index.mjs"]`
+
+   **Example 3**: You can also use absolute paths:
+
+   ```json
+   "args": ["/Users/yourname/mcp-antd/index.mjs"]
+   ```
+
+4. **Reload VS Code**:
+
+   After creating the `mcp.json` file, restart VS Code or reload the window to activate the MCP server.
+
+#### How to Use
+
+Once configured, you can ask questions about Ant Design components directly in VS Code:
+
+- "What Ant Design components are available?"
+- "Show me the Button component documentation"
+- "What props does the Table component accept?"
+- "Give me an example of using the Modal component"
+
+The MCP server will provide detailed documentation, code examples, and API information right within your VS Code environment.
+
+#### Troubleshooting
+
+- **Server not found**: Check that the path in `mcp.json` correctly points to `index.mjs`
+- **Permission errors**: Make sure the MCP server directory is readable
+- **Server not starting**: Verify the MCP server works by running `npm start` in the mcp-antd directory first
+
 ## MCP Tools
 
 The server provides the following tools for LLMs to interact with Ant Design component documentation:
@@ -147,6 +270,7 @@ The `scripts/extract-docs.mjs` script extracts documentation from the Ant Design
 - Common props documentation
 
 This approach has several advantages:
+
 1. Users don't need to clone the entire Ant Design repository
 2. Faster startup time for the MCP server
 3. Smaller package size
