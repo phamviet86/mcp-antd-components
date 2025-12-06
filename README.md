@@ -8,29 +8,40 @@ Model Context Protocol (MCP) server that serves Ant Design component documentati
 - Tools to list components, fetch docs/props/examples, and search by name
 - Works with VS Code MCP clients (config below)
 
+## Ant Design versions in `data/`
+
+Ant Design docs already extracted into this project's `data/` folder:
+
+- 2025-12-06: updated Ant Design 6.0.1
+
 ## Setup
 
-1) Install dependencies:
+1. Install dependencies:
+
 ```bash
 npm install
 ```
 
-2) Clone the Ant Design repo (needed for extraction only):
+2. Clone the Ant Design repo (needed for extraction only):
+
 ```bash
 git clone https://github.com/ant-design/ant-design.git
 ```
 
-3) Extract docs:
+3. Extract docs:
+
 ```bash
 npm run extract
 ```
 
-4) (Optional) Run tests for the MCP server:
+4. (Optional) Run tests for the MCP server:
+
 ```bash
 npm test
 ```
 
-5) Confirm `data` exists, then drop the cloned repo to save space:
+5. Confirm `data` exists, then drop the cloned repo to save space:
+
 ```bash
 ls -la data && rm -rf ./ant-design
 ```
