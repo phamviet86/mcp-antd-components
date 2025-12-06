@@ -1,0 +1,21 @@
+## Examples
+
+- **simple**: Basic
+- **error**: Error status
+- **vertical**: Vertical
+- **clickable**: Clickable
+- **panel**: Panel Steps
+- **icon**: With icon
+- **step-next**: Switch Step
+- **title-placement**: Title Placement and Progress
+- **progress-dot**: Dot Style
+- **customized-progress-dot**: Customized Dot Style
+- **nav**: Navigation Steps
+- **progress**: Steps with progress
+- **progress-debug**: Progress Debug
+- **steps-in-steps**: Steps inside Steps
+- **inline**: Inline Steps
+- **inline-variant**: Inline Style Combination
+- **style-class**: Custom semantic dom styling
+- **variant-debug**: Variant Debug
+- **component-token**: Component Token
