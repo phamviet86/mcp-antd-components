@@ -10,11 +10,13 @@ Model Context Protocol (MCP) server that serves Ant Design component documentati
 
 ## Ant Design versions in `data/`
 
-Ant Design docs already extracted into this project's `data/` folder:
+Ant Design docs are already included in this project under `data/`. If you are fine with the bundled version, skip the setup steps and just wire it to VS Code (see config below).
 
 - 2025-12-06: updated Ant Design 6.0.1
 
 ## Setup
+
+Only run this if you want to refresh the data to a different Ant Design version.
 
 1. Install dependencies:
 
@@ -28,19 +30,25 @@ npm install
 git clone https://github.com/ant-design/ant-design.git
 ```
 
-3. Extract docs:
+3. Remove the old extracted data (so you don't mix versions):
+
+```bash
+rm -rf data
+```
+
+4. Extract docs:
 
 ```bash
 npm run extract
 ```
 
-4. (Optional) Run tests for the MCP server:
+5. (Optional) Run tests for the MCP server:
 
 ```bash
 npm test
 ```
 
-5. Confirm `data` exists, then drop the cloned repo to save space:
+6. Confirm `data` exists, then drop the cloned repo to save space:
 
 ```bash
 ls -la data && rm -rf ./ant-design
