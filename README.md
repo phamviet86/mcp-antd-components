@@ -1,6 +1,6 @@
 # Ant Design Components Model Context Protocol Server
 
-A Model Context Protocol (MCP) server that exposes Ant Design component documentation to Large Language Models (LLMs) like Claude. This server allows an LLM to explore and understand Ant Design components through a set of specialized tools.
+A Model Context Protocol (MCP) server that exposes Ant Design component documentation to Large Language Models (LLMs). This server allows an LLM to explore and understand Ant Design components through a set of specialized tools.
 
 ## Features
 
@@ -14,102 +14,62 @@ A Model Context Protocol (MCP) server that exposes Ant Design component document
 
 ## Initial Setup
 
-Before using the MCP server for the first time, you need to extract the documentation from the Ant Design repository:
+To set up the MCP server, perform the following steps:
 
-```bash
-# First, clone the Ant Design repository (can be temporary)
-git clone https://github.com/ant-design/ant-design.git
+1. **Install dependencies**:
 
-# Extract documentation
-cd mcp-antd-components
-npm run extract   # Uses the default ./ant-design path
-# OR
-node scripts/extract-docs.mjs /path/to/ant-design  # For a custom path
+   ```bash
+   npm install
+   ```
 
-# After extraction is complete, the Ant Design repo can be deleted if desired
-```
+2. **Clone the Ant Design repository**:
+
+   ```bash
+   git clone https://github.com/ant-design/ant-design.git
+   ```
+
+3. **Extract documentation**:
+
+   ```bash
+   npm run extract
+   ```
+
+4. **Test the server**:
+
+   ```bash
+   npm test
+   ```
+
+5. **Check if `data` folder is created; if yes, remove `./ant-design` folder**:
+   ```bash
+   ls -la data && rm -rf ./ant-design
+   ```
 
 This will create a `data` directory with all the extracted component documentation, which the MCP server will use.
-
-### Testing the Server
-
-To verify that everything is working correctly, you can run the test script:
-
-```bash
-npm test
-# OR
-node scripts/test-server.mjs
-```
 
 This will run the MCP server and test all available tools with sample queries.
 
 ## Usage
 
-### Command Line
+### VSCode MCP Setup
 
-Run the MCP server:
-
-```bash
-# Run server with pre-extracted data
-npm start
-# OR
-npx -y mcp-antd-components
-```
-
-### Claude Desktop Integration
-
-To use this MCP server with Claude Desktop, edit your `claude_desktop_config.json` configuration file:
+To use this MCP server in VSCode, add the following configuration to your `mcp.json` file:
 
 ```json
 {
-  "mcpServers": {
-    "Ant Design Components": {
-      "command": "npx",
-      "args": ["-y", "mcp-antd-components"]
+  "servers": {
+    "antd": {
+      "command": "node",
+      "args": ["../mcp-antd-components/index.mjs"]
     }
-  }
+  },
+  "inputs": []
 }
 ```
 
-Location of the configuration file:
+**Note**: The `args` path is relative to the project where MCP is installed. Adjust the path (`../mcp-antd-components/index.mjs`) accordingly based on your project structure.
 
-- macOS/Linux: `~/Library/Application Support/Claude/claude_desktop_config.json`
-- Windows: `$env:AppData\Claude\claude_desktop_config.json`
-
-### Claude Code Integration
-
-To use this MCP server with Claude Code CLI, follow these steps:
-
-1. **Add the Ant Design Components MCP server to Claude Code**
-
-   ```bash
-   # Basic syntax
-   claude mcp add antd-components npx -y mcp-antd-components
-   ```
-
-2. **Verify the MCP server is registered**
-
-   ```bash
-   # List all configured servers
-   claude mcp list
-
-   # Get details for your Ant Design components server
-   claude mcp get antd-components
-   ```
-
-3. **Remove the server if needed**
-
-   ```bash
-   claude mcp remove antd-components
-   ```
-
-4. **Use the tool in Claude Code**
-
-   Once configured, you can invoke the tool in your Claude Code session by asking questions about Ant Design components.
-
-**Tips:**
-
-- Use the `-s` or `--scope` flag with `project` (default) or `global` to specify where the configuration is stored
+With this setup, the MCP server runs automatically when needed and does not require manual starting.
 
 ## MCP Tools
 
@@ -147,6 +107,7 @@ The `scripts/extract-docs.mjs` script extracts documentation from the Ant Design
 - Common props documentation
 
 This approach has several advantages:
+
 1. Users don't need to clone the entire Ant Design repository
 2. Faster startup time for the MCP server
 3. Smaller package size
