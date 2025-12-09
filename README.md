@@ -23,7 +23,7 @@ The MCP server starts automatically when the VS Code extension requests it. Adju
 
 ## Ant Design packaged in `data/`
 
-- 2025-12-06: Ant Design 6.0.1 extracted and ready. If this version works for you, skip “Refresh data”.
+- 2025-12-09: Ant Design 6.1.0 (latest per `ant-design/CHANGELOG.en-US.md`) extracted and ready. If this version works for you, skip "Refresh data".
 
 ## Refresh data (optional)
 
@@ -37,19 +37,24 @@ Only needed if you want a different Ant Design version.
    ```bash
    git clone https://github.com/ant-design/ant-design.git
    ```
-3. Remove old extracted data:
+3. Check the latest Ant Design version from the changelog and note it for later:
+   ```bash
+   head -n 80 ant-design/CHANGELOG.en-US.md
+   ```
+4. Remove old extracted data:
    ```bash
    rm -rf data
    ```
-4. Extract docs:
+5. Extract docs:
    ```bash
    npm run extract
    ```
-5. (Optional) Run tests:
+6. (Optional) Run tests:
    ```bash
    npm test
    ```
-6. Verify `data`, then delete the cloned repo to save space:
+7. Update the version line under "Ant Design packaged in `data/`" in `README.md` using the version you noted from step 3. Update the date if needed.
+8. Verify `data`, then delete the cloned repo to save space:
    ```bash
    ls -la data && rm -rf ./ant-design
    ```

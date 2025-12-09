@@ -3,6 +3,7 @@
 - **basic**: Basic Usage
 - **search**: Select with search field
 - **search-filter-option**: Custom Search
+- **search-multi-field**: Multi field search
 - **multiple**: multiple selection
 - **size**: Sizes
 - **option-render**: Custom dropdown options
