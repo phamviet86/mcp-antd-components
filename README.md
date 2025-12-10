@@ -12,7 +12,7 @@ Model Context Protocol (MCP) server that serves Ant Design component docs to LLM
   "servers": {
     "antd": {
       "command": "node",
-      "args": ["../mcp-antd-components/index.mjs"]
+      "args": ["../mcp-antd-vscode/index.mjs"]
     }
   },
   "inputs": []
