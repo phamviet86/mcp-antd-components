@@ -4,7 +4,12 @@ Model Context Protocol (MCP) server that serves Ant Design component docs to LLM
 
 ## Quick start with VS Code
 
-1. Clone this repo. Ant Design docs are already bundled in `data/` (see version below). No build needed if you use the included data.
+1. Clone this repo and install dependencies (required once even when using the bundled data). No extra build is needed:
+   ```bash
+   npm install
+   ```
+   Ant Design docs are already bundled in `data/` (see version below).
+
 2. Add this to your VS Code `mcp.json`:
 
 ```json
@@ -29,7 +34,7 @@ The MCP server starts automatically when the VS Code extension requests it. Adju
 
 Only needed if you want a different Ant Design version.
 
-1. Install dependencies:
+1. Install dependencies (skip if you already ran `npm install` in Quick start):
    ```bash
    npm install
    ```
