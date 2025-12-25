@@ -41,6 +41,7 @@ When asking an assistant to refresh data, confirm these inputs first:
 - Clone a new `ant-design` repo or reuse the existing one?
 - Switch versions (tag/branch) or keep current checkout?
 - Remove `./ant-design` after extraction or keep it?
+If `./ant-design` already exists and you choose to clone, delete the existing folder first.
 If the user does not specify, use defaults (update new version mode):
 - Clone a fresh `ant-design`
 - Do not switch versions
