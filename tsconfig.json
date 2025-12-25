@@ -8,8 +8,5 @@
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true
   },
-  "include": [
-    "*.mjs",
-    "*.ts"
-  ]
+  "include": ["*.mjs", "*.ts"]
 }

@@ -5,9 +5,11 @@ Model Context Protocol (MCP) server that serves Ant Design component docs to LLM
 ## Quick start with VS Code
 
 1. Clone this repo and install dependencies (required once even when using the bundled data). No extra build is needed:
+
    ```bash
    npm install
    ```
+
    Ant Design docs are already bundled in `data/` (see version below).
 
 2. Add this to your VS Code `mcp.json`:
@@ -26,43 +28,77 @@ Model Context Protocol (MCP) server that serves Ant Design component docs to LLM
 
 The MCP server starts automatically when the VS Code extension requests it. Adjust `args` if your folder layout differs.
 
-## Ant Design packaged in `data/`
+## Ant Design versions packaged in project
 
-- 2025-12-09: Ant Design 6.1.0 (latest per `ant-design/CHANGELOG.en-US.md`) extracted and ready. If this version works for you, skip "Refresh data".
+- 2025-12-09:
+  - Ant Design version: 6.1.2
+  - Data version: 5.29.3
 
 ## Refresh data (optional)
 
 Only needed if you want a different Ant Design version.
+When asking an assistant to refresh data, confirm these inputs first:
+- Clone a new `ant-design` repo or reuse the existing one?
+- Switch versions (tag/branch) or keep current checkout?
+- Remove `./ant-design` after extraction or keep it?
+If the user does not specify, use defaults (update new version mode):
+- Clone a fresh `ant-design`
+- Do not switch versions
+- Do not remove `./ant-design`
 
 1. Install dependencies (skip if you already ran `npm install` in Quick start):
    ```bash
    npm install
    ```
-2. Clone the Ant Design repo (only for extraction):
+2. Clone the Ant Design repo (only for extraction). If you are reusing an existing `./ant-design`, skip this step:
    ```bash
    git clone https://github.com/ant-design/ant-design.git
    ```
-3. Check the latest Ant Design version from the changelog and note it for later:
+3. Move into the Ant Design folder:
    ```bash
-   head -n 80 ant-design/CHANGELOG.en-US.md
+   cd ant-design
    ```
-4. Remove old extracted data:
+4. Check the Ant Design version from the changelog and note it for later:
+   ```bash
+   head -n 80 CHANGELOG.en-US.md
+   ```
+5. (Optional) Switch to a specific Ant Design version. If you skip this, the data will use the current checkout (usually the latest):
+   ```bash
+   git checkout tags/5.29.3
+   ```
+6. (Optional) Check the Ant Design version again after switching and note it for later:
+   ```bash
+   head -n 80 CHANGELOG.en-US.md
+   ```
+7. Return to the project root:
+   ```bash
+   cd ..
+   ```
+8. Remove old extracted data:
    ```bash
    rm -rf data
    ```
-5. Extract docs:
+9. Extract docs:
    ```bash
    npm run extract
    ```
-6. (Optional) Run tests:
-   ```bash
-   npm test
-   ```
-7. Update the version line under "Ant Design packaged in `data/`" in `README.md` using the version you noted from step 3. Update the date if needed.
-8. Verify `data`, then delete the cloned repo to save space:
-   ```bash
-   ls -la data && rm -rf ./ant-design
-   ```
+10. (Optional) Run tests:
+    ```bash
+    npm test
+    ```
+11. Update the version lines under "Ant Design versions packaged in project" in `README.md` using the version you noted:
+    - If you switched versions, use the version from step 6.
+    - If you did not switch, use the version from step 4.
+    - If you switched versions, `Data version` is the switched version.
+    - If you did not switch, `Data version` matches `Ant Design version`.
+12. Verify `data`, then optionally delete the cloned repo to save space (keep it if you want to switch versions later):
+    ```bash
+    ls -la data
+    ```
+    If you chose to remove the repo:
+    ```bash
+    rm -rf ./ant-design
+    ```
 
 ## MCP tools
 
