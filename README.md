@@ -30,19 +30,51 @@ The MCP server starts automatically when the VS Code extension requests it. Adju
 
 ## Ant Design versions packaged in project
 
-- 2025-12-09:
-  - Ant Design version: 6.1.2
-  - Data version: 5.29.3
+- 2025-12-29:
+  - Ant Design version: 6.1.3
+  - Data version: 6.1.3
 
 ## Refresh data (optional)
 
-Only needed if you want a different Ant Design version.
+### Automated scripts (recommended)
+
+**Update to latest version:**
+
+```bash
+./scripts/update-latest.sh
+```
+
+This script will:
+
+- Clone fresh Ant Design repo
+- Extract documentation
+- Run tests
+- Save version info to `version-info.json`
+
+**Switch to specific version:**
+
+```bash
+./scripts/switch-version.sh 5.29.3
+```
+
+This script will:
+
+- Clone or reuse existing Ant Design repo
+- Checkout specified version
+- Extract documentation
+- Run tests
+- Save version info to `version-info.json`
+
+### Manual refresh
+
+Only needed if you want more control over the process.
 When asking an assistant to refresh data, confirm these inputs first:
+
 - Clone a new `ant-design` repo or reuse the existing one?
 - Switch versions (tag/branch) or keep current checkout?
 - Remove `./ant-design` after extraction or keep it?
-If `./ant-design` already exists and you choose to clone, delete the existing folder first.
-If the user does not specify, use defaults (update new version mode):
+  If `./ant-design` already exists and you choose to clone, delete the existing folder first.
+  If the user does not specify, use defaults (update new version mode):
 - Clone a fresh `ant-design`
 - Do not switch versions
 - Do not remove `./ant-design`
