@@ -34,7 +34,6 @@
 - **drag-sorting**: Drag sorting
 - **drag-column-sorting**: Drag Column sorting
 - **drag-sorting-handler**: Drag sorting with handler
-- **resizable-column**: Resizable column
 - **ellipsis**: ellipsis column
 - **ellipsis-custom-tooltip**: ellipsis column custom tooltip
 - **custom-empty**: Custom empty
