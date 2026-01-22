@@ -5,7 +5,7 @@
 - **more**: More
 - **changer**: Changer
 - **jump**: Jumper
-- **mini**: Mini size
+- **mini**: Size
 - **simple**: Simple mode
 - **controlled**: Controlled
 - **total**: Total number
