@@ -1,8 +1,8 @@
 {
-  "lastUpdated": "2026-01-22",
-  "antDesignVersion": "6.2.1",
-  "dataVersion": "6.2.1",
-  "sourceCommit": "3ac1fc78e7",
+  "lastUpdated": "2026-01-28",
+  "antDesignVersion": "6.2.2",
+  "dataVersion": "6.2.2",
+  "sourceCommit": "076c84b181",
   "mode": "latest",
   "notes": "Updated to latest Ant Design version"
 }
