@@ -12,3 +12,4 @@
 - **ellipsis-debug**: Ellipsis Debug
 - **suffix**: suffix
 - **componentToken-debug**: Component Token
+- **link-danger-debug**: Link danger Debug

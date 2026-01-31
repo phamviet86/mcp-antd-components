@@ -19,6 +19,7 @@
 <code src="./demo/ellipsis-debug.tsx" debug>Ellipsis Debug</code>
 <code src="./demo/suffix.tsx">suffix</code>
 <code src="./demo/componentToken-debug.tsx" debug>Component Token</code>
+<code src="./demo/link-danger-debug.tsx" debug>Link danger Debug</code>
 
 ## API
 
