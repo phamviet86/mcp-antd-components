@@ -4,6 +4,7 @@
 - **horizontal-dark**: Top Navigation (dark)
 - **inline**: Inline menu
 - **inline-collapsed**: Collapsed inline menu
+- **tooltip**: Menu tooltip
 - **sider-current**: Open current submenu only
 - **vertical**: Vertical menu
 - **theme**: Menu Themes

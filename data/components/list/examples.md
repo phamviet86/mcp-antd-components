@@ -15,3 +15,4 @@
 - **grid-drag-sorting-handler**: Grid Drag sorting with handler
 - **virtual-list**: virtual list
 - **component-token**: custom component token
+- **spin-debug**: Spin loading debug
