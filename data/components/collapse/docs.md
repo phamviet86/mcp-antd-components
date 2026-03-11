@@ -40,7 +40,7 @@ Common props ref：[Common props](/docs/react/common-props)
 | expandIconPlacement | Set expand icon placement | `start` \| `end` | `start` | - |
 | ~~expandIconPosition~~ | Set expand icon position, Please use `expandIconPlacement` instead | `start` \| `end` | - | 4.21.0 |
 | ghost | Make the collapse borderless and its background transparent | boolean | false | 4.4.0 |
-| size | Set the size of collapse | `large` \| `middle` \| `small` | `middle` | 5.2.0 |
+| size | Set the size of collapse | `large` \| `medium` \| `small` | `medium` | 5.2.0 |
 | styles | Customize inline style for each semantic structure inside the component. Supports object or function. | Record<[SemanticDOM](#semantic-dom), CSSProperties> \| (info: { props })=> Record<[SemanticDOM](#semantic-dom), CSSProperties> | - |  |
 | onChange | Callback function executed when active panel is changed | function | - |  |
 | items | collapse items content | [ItemType](#itemtype) | - | 5.6.0 |

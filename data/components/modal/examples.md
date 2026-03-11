@@ -16,7 +16,6 @@
 - **width**: To customize the width of modal
 - **static-info**: Static Method
 - **confirm**: Static confirmation
-- **classNames**: Customize className for build-in module
 - **confirm-router**: destroy confirmation modal dialog
 - **style-class**: Custom semantic dom styling
 - **nested**: Nested Modal

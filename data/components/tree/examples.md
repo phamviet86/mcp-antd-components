@@ -17,3 +17,4 @@
 - **component-token**: Component Token
 - **multiple-line**: Multiple lines
 - **style-class**: Custom semantic dom styling
+- **line-debug**: Line debug

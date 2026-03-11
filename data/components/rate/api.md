@@ -11,7 +11,7 @@
 | defaultValue | The default value | number | 0 |  |
 | disabled | If read only, unable to interact | boolean | false |  |
 | keyboard | Support keyboard operation | boolean | true | 5.18.0 |
-| size | Star size | 'small' \| 'middle' \| 'large' | 'middle' |  |
+| size | Star size | 'small' \| 'medium' \| 'large' | 'medium' |  |
 | style | The custom style object of rate | CSSProperties | - |  |
 | tooltips | Customize tooltip by each character | [TooltipProps](/components/tooltip#api)[] \| string\[] | - |  |
 | value | The current value | number | - |  |

@@ -11,6 +11,7 @@
 - **variant**: Variants
 - **spinner**: Spinner
 - **filled-debug**: Filled Debug
+- **borderless-height-debug**: Borderless height alignment
 - **out-of-range**: Out of range
 - **presuffix**: Prefix / Suffix
 - **status**: Status

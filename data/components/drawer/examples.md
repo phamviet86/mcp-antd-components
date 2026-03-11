@@ -10,7 +10,6 @@
 - **user-profile**: Preview drawer
 - **multi-level-drawer**: Multi-level drawer
 - **size**: Preset size
-- **classNames**: Customize className for build-in module
 - **mask**: mask
 - **closable-placement**: Closable placement
 - **style-class**: Custom semantic dom styling

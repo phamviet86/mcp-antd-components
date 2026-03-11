@@ -35,7 +35,7 @@
 | --- | --- | --- | --- |
 | active | Show animation effect, only valid when used avatar independently | boolean | false |
 | shape | Set the shape of avatar | `circle` \| `square` | `circle` |
-| size | Set the size of avatar | number \| `large` \| `small` \| `default` | `default` |
+| size | Set the size of avatar | number \| `large` \| `medium` \| `small` | `medium` |
 
 ### Skeleton.Button
 
@@ -44,11 +44,11 @@
 | active | Show animation effect | boolean | false |  |
 | block | Option to fit button width to its parent width | boolean | false | 4.17.0 |
 | shape | Set the shape of button | `circle` \| `round` \| `square` \| `default` | - |  |
-| size | Set the size of button | `large` \| `small` \| `default` | - |  |
+| size | Set the size of button | `large` \| `medium` \| `small` | `medium` |  |
 
 ### Skeleton.Input
 
-| Property | Description           | Type                            | Default |
-| -------- | --------------------- | ------------------------------- | ------- |
-| active   | Show animation effect | boolean                         | false   |
-| size     | Set the size of input | `large` \| `small` \| `default` | -       |
+| Property | Description           | Type                           | Default  |
+| -------- | --------------------- | ------------------------------ | -------- |
+| active   | Show animation effect | boolean                        | false    |
+| size     | Set the size of input | `large` \| `medium` \| `small` | `medium` |
