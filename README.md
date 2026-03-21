@@ -30,9 +30,9 @@ The MCP server starts automatically when the VS Code extension requests it. Adju
 
 ## Ant Design versions packaged in project
 
-- 2026-03-11:
-  - Ant Design version: 6.3.2
-  - Data version: 6.3.2
+- 2026-03-21:
+  - Ant Design version: 6.3.3
+  - Data version: 6.3.3
 
 ## Refresh data (optional)
 

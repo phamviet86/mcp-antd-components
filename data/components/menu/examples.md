@@ -16,3 +16,4 @@
 - **component-token**: Component Token
 - **extra-style**: Extra Style debug
 - **custom-popup-render**: Custom Submenu Render
+- **collapsed-icon-debug**: Collapsed menu icon alignment
